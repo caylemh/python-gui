@@ -4,7 +4,7 @@ import os
 
 root = Tk()
 root.title('External Program')
-root.geometry('400x600')
+root.geometry('200x100')
 
 def open_program():
     my_program = filedialog.askopenfilename()

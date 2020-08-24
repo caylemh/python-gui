@@ -31,6 +31,7 @@ name_entered.grid(column=0, row=1)
 # Adding a button
 action = ttk.Button(window, text="Click Here", command=click_me)
 action.grid(column=1, row=1)
+action.configure(state='disabled')
 
 
 #======================

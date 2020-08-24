@@ -3,7 +3,7 @@
 # imports
 #======================
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, scrolledtext
 
 # Create instance
 window = tk.Tk()   
@@ -15,10 +15,10 @@ window.title("Python GUI")
 a_label = ttk.Label(window, text="A Label")
 a_label.grid(column=0, row=0)
 
-# Button click event
+# Button function
 def click_me():
     action.configure(text='Hello ' + name.get() + ' ' + number_chosen.get())
-
+    
 #Changing our label
 ttk.Label(text="Enter a name: ").grid(column=0, row=0)
 
@@ -59,6 +59,31 @@ check2.grid(column=1, row=3, sticky=tk.W)
 check3 = tk.Checkbutton(window, text="Enabled", variable=chVarEn)
 check3.select()
 check3.grid(column=2, row=3, sticky=tk.W)
+
+# Global Variables for Radio Buttons
+COLOR1 = 'Blue'
+COLOR2 = 'Gold'
+COLOR3 = 'Red'
+
+# Radio Button function
+def radCall():
+    radSel = radVar.get()
+    if radSel == 1:
+        window.configure(background=COLOR1)
+    elif radSel == 2:
+        window.configure(background=COLOR2)
+    elif radSel == 3:
+        window.configure(background=COLOR3)
+
+# Radio Buttons
+radVar = tk.IntVar()
+
+rad1 = tk.Radiobutton(window, text="COLOR 1", variable=radVar, value=1, command=radCall)
+rad1.grid(column=0, row=4, sticky=tk.W, columnspan=3)
+rad2 = tk.Radiobutton(window, text="COLOR 2", variable=radVar, value=2, command=radCall)
+rad2.grid(column=1, row=4, sticky=tk.W, columnspan=3)
+rad3 = tk.Radiobutton(window, text="COLOR 3", variable=radVar, value=3, command=radCall)
+rad3.grid(column=2, row=4, sticky=tk.W, columnspan=3)
 
 name_entered.focus()  # Placing focus into the Entry box
 

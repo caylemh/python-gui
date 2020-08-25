@@ -74,7 +74,7 @@ def radCall():
 radVar = tk.IntVar()
 radVar.set(99)
 
-for col in range(5):
+for col in range(3):
     curRad = tk.Radiobutton(window, text=colors[col], variable=radVar, value=col, command=radCall)
     curRad.grid(column=col, row=4, sticky=tk.W)
 

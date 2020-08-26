@@ -1,7 +1,22 @@
-import pygetwindow._pygetwindow_win as getwin
-import os
-import win32gui
+from PySide2 import QtCore
+from PySide2.QtWidgets import QApplication, QLabel, QWidget
+import sys
+  
+# proc = QtCore.QProcess()
+# proc.start("ping", ["www.google.com", "-n", "5"])
+# proc.waitForFinished()
+# stdOut = proc.readAllStandardOutput()
+# stdErr = proc.readAllStandardError()
+  
+# print ("Standard Out:")
+# print (stdOut)
+# print ("Standard Error:")
+# print (stdErr)
 
-# os.system("c:\windows\system32\calc.exe")
-hwnd = win32gui.FindWindow(0, 'Calculator')
-print(hwnd)
+
+# -- Hello World --
+app = QApplication(sys.argv)
+label = QLabel("Hello World!")
+w = QWidget(label)
+w.show()
+app.exec_()

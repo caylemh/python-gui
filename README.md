@@ -1,2 +1,2 @@
 # python-gui
-Using Tkinter to create Python GUIs
+Using Tkinter & PySide2/PyQt5 to create Python GUIs
